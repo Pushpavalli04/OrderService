@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "pwsh .github/hooks/scripts/pre-push-tests.ps1",
+        "windows": "powershell -ExecutionPolicy Bypass -File .github\\hooks\\scripts\\pre-push-tests.ps1",
+        "timeout": 120
+      }
+    ]
+  }
+}

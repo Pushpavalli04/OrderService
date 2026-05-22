@@ -7,7 +7,7 @@ namespace OrderService.Web.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly IProductService _productService;
+    private  IProductService _productService;
 
     public HomeController(IProductService productService)
     {
