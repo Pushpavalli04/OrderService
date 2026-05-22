@@ -30,4 +30,14 @@ public class ProductRoutesTests : IClassFixture<WebApplicationFactory<Program>>
 
         Assert.Equal(System.Net.HttpStatusCode.NotFound, response.StatusCode);
     }
+
+    [Fact]
+    public async Task ProductDetails_ReturnsSuccess_ForValidProduct()
+    {
+        using var client = _factory.CreateClient();
+
+        var response = await client.GetAsync("/products/1");
+
+        Assert.True(response.IsSuccessStatusCode);
+    }
 }

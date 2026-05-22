@@ -8,7 +8,8 @@ handoffs:
   - label: "Fixes Completed to Approval"
     agent: "PR Approval Agent"
     prompt: "Code Review fix Completed. Evaluate PR approval readiness using remediation summary, validation results, and remaining blockers."
-    send: "all"
+    send: true
+    
 ---
 You are a pull request remediation specialist.
 

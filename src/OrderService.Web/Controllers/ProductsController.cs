@@ -16,7 +16,12 @@ public class ProductsController : Controller
     [HttpGet("{id:int}")]
     public IActionResult Details(int id)
     {
-        var product = _productService.GetById(id);        
+        var product = _productService.GetById(id);
+
+        if (product is null)
+        {
+            return NotFound();
+        }
 
         return View(product);
     }
