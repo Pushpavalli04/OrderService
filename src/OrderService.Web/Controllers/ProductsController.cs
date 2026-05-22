@@ -17,6 +17,7 @@ public class ProductsController : Controller
     public IActionResult Details(int id)
     {
         var product = _productService.GetById(id);
+
         if (product is null)
         {
             return NotFound();
