@@ -1,0 +1,32 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-link px-0 mb-3">&larr; Back to items</a>
+
+<div class="card border-0 shadow-sm overflow-hidden">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid h-100 object-fit-cover" />
+        </div>
+        <div class="col-md-6">
+            <div class="card-body p-4 p-lg-5">
+                <p class="text-uppercase fw-semibold text-secondary mb-2">@Model.Category</p>
+                <h1 class="display-6 fw-bold">@Model.Name</h1>
+                <p class="lead mt-3">@Model.Description</p>
+                <dl class="row mt-4 mb-0">
+                    <dt class="col-sm-4">Price</dt>
+                    <dd class="col-sm-8 fw-semibold">@Model.Price.ToString("C")</dd>
+
+                    <dt class="col-sm-4">Stock</dt>
+                    <dd class="col-sm-8">@Model.Stock available</dd>
+
+                    <dt class="col-sm-4">Product Id</dt>
+                    <dd class="col-sm-8">@Model.Id</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
